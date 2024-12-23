@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Survey</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+        .question {
+            margin: 20px 0;
+        }
+        .question h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .options {
+            list-style: none;
+            padding: 0;
+        }
+        .options li {
+            margin: 10px 0;
+        }
+        .options input {
+            margin-right: 10px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .results {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Interactive Survey</h1>
+        <div class="question">
+            <h2>Question 1: What is your favorite programming language?</h2>
+            <ul class="options">
+                <li><label><input type="radio" name="q1" value="JavaScript"> JavaScript</label></li>
+                <li><label><input type="radio" name="q1" value="Python"> Python</label></li>
+                <li><label><input type="radio" name="q1" value="Java"> Java</label></li>
+                <li><label><input type="radio" name="q1" value="C#"> C#</label></li>
+            </ul>
+        </div>
+        <button onclick="showResults()">Submit</button>
+        <div class="results">
+            <h2>Thank you for participating!</h2>
+            <p>Your response has been recorded.</p>
+        </div>
+    </div>
+    <script>
+        function showResults() {
+            const question = document.querySelector('.question');
+            const button = document.querySelector('button');
+            const results = document.querySelector('.results');
+
+            question.style.display = 'none';
+            button.style.display = 'none';
+            results.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
